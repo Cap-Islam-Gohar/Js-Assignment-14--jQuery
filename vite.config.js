@@ -16,5 +16,5 @@ export default defineConfig({
         port: 8080,
         hot: true
     },
-    // base: "/Js-Assignment-1--Exercises/"   
+    base: "/Js-Assignment-14--jQuery/"   
 });
