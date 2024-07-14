@@ -149,7 +149,7 @@ $(() => {
         if(target.offset().left < 0){
             target.animate({left: 0}, 500);
         }else{
-            target.animate({left: `-50%`}, 500);
+            target.animate({left: `-205px`}, 500);
         }
     });
 
