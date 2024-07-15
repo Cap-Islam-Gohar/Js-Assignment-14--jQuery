@@ -153,16 +153,38 @@ $(() => {
         }
     });
 
+
+    $("textarea").on("paste", (event) => {
+        event.preventDefault();
+
+        // let paste = ($(this).clipboardData || window.clipboardData).getData("text");
+        
+        // paste = paste.length;
+
+        console.log(window)
+        
+    });
+
     //texteara remined change when bigger than 100 charcter
     $("textarea").on("keyup", (e) => {
         let countChar = $(e.target).val().length;
-        console.log(countChar)
         if(countChar <= 100){
             $("#error").html(`<span class="primary-text fs-3">${countChar}</span> Characyer Reamining</span>`);
         }else{
             $("#error").html("<span class='primary-text fs-3'>your available character finished</span>");
         }
-    });    
+    });   
+    
+    let maxLength = 100;
+    $('textarea').on("keyup", function(){
+        let contain = $(this).val().length;
+        var left = maxLength - contain;
+        if(left <= 0){
+            $("#error").html("<span class='primary-text fs-3'>your available character finished</span>");
+        }else{
+            $("#error").html(`<span class="primary-text fs-3">${left}</span> Characyer Reamining</span>`);
+        }
+    });
 
     
 
